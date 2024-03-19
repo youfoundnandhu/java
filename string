@@ -1,0 +1,20 @@
+public class string {
+    public static void main(String args[])
+    {
+        String str="java programming";
+        System.out.println("the string is"+str+",");
+        System.out.println("length of the string is "+str.length());
+        System.out.println("Character at second and fourth position is"+str.charAt(1)+","+str.charAt(3));
+        System.out.println("the hub string using start index only is"+str.substring(5));
+        System.out.println("the hub string using start index only is"+str.substring((int) 0.4));
+    }
+}
+
+output
+..............
+length of the string is 16
+Character at second and fourth position isa,a
+the hub string using start index only isprogramming
+the hub string using start index only isjava programming
+
+Process finished with exit code 0
