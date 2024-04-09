@@ -1,0 +1,107 @@
+Create a class ‘Employee’ with data members Empid, Name, Salary, Address and constructors 
+to initialize the data members. Create another class ‘Teacher’ that inherit the properties of class 
+employee and contain its own data members department, Subjects taught and constructors to 
+initialize these data members and also include display function to display all the data members. 
+Use array of objects to display details of N teachers
+
+CODE:-
+mport java.util.*;
+class Employee
+{
+    int empid,salary;
+    String name,address;
+
+    Employee(int e,String n,int s,String a)
+    {
+        empid=e;
+        name=n;
+        salary=s;
+        address=a;
+    }
+}
+class Teacher extends Employee
+{
+    String department, subject;
+
+    Teacher(int e,String n,int s,String a,String d,String sub)
+    {
+        super(e,n,s,a);
+        department=d;
+        subject=sub;
+    }
+    void display()
+    {
+        System.out.println("ID: "+empid);
+        System.out.println("Name: "+name);
+        System.out.println("Salary: "+salary);
+        System.out.println("Address: "+address);
+        System.out.println("Department: "+department);
+        System.out.println("Subject: "+subject);
+    }
+}
+class arrayObject
+{
+    public static void main(String args[])
+    {
+        Scanner s = new Scanner(System.in);
+        Teacher T[] = new Teacher[5];
+        int num,id,sal;
+        String empname,empadd,empdept,empsub;
+        System.out.println("Enter number of employees: ");
+        num=s.nextInt();
+        for(int i=0;i<num;i++)
+        {
+            System.out.println("Enter employee ID: ");
+            id=s.nextInt();
+            s.nextLine();
+
+            System.out.println("Enter employee name: ");
+            empname=s.nextLine();
+
+            System.out.println("Enter employee salary: ");
+            sal=s.nextInt();
+            s.nextLine();
+
+            System.out.println("Enter employee address: ");
+            empadd=s.nextLine();
+
+            System.out.println("Enter employee department: ");
+            empdept=s.nextLine();
+
+            System.out.println("Enter employee subject: ");
+            empsub=s.nextLine();
+
+            T[i] = new Teacher(id,empname,sal,empadd,empdept,empsub);
+        }
+        for(int i=0;i<num;i++)
+        {
+            T[i].display();
+        }
+
+    }
+}
+
+output:-
+
+Enter number of employees: 
+1
+Enter employee ID: 
+1
+Enter employee name: 
+nandhu
+Enter employee salary: 
+12000
+Enter employee address: 
+mundakkayam
+Enter employee department: 
+mca
+Enter employee subject: 
+dbms
+ID: 1
+Name: nandhu
+Salary: 12000
+Address: mundakkayam
+Department: mca
+Subject: dbms
+
+Process finished with exit code 0
